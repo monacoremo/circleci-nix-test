@@ -14,7 +14,7 @@ let
     };
 
   pkgs =
-    import pinnedPkgs { inherit overlays; };
+    import pinnedPkgs {};
 in
 rec {
   inherit pkgs pinnedPkgs;
