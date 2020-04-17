@@ -9,11 +9,10 @@ jobs:
           name: Install Nix
           command: |
             curl -L https://nixos.org/nix/install | sh
-            source /home/circleci/.nix-profile/etc/profile.d/nix.sh
-            echo $NIX_PATH
-            echo $PATH
       - run:
           name: Tests
           command: |
+            source /home/circleci/.nix-profile/etc/profile.d/nix.sh
             echo $NIX_PATH
             echo $PATH
+            nix-env -iA pkgs.silver-searcher -f default.nix
