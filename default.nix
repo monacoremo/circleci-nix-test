@@ -13,11 +13,6 @@ let
       sha256 = nixpkgsVersion.tarballHash;
     };
 
-  overlays = [
-    (import nix/overlays/gitignore.nix)
-    (import nix/overlays/haskell-packages { inherit compiler; })
-  ];
-
   pkgs =
     import pinnedPkgs { inherit overlays; };
 in
