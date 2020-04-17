@@ -1,0 +1,11 @@
+ 
+version: 2.1
+jobs:
+  build:
+    machine: true
+    steps:
+      - checkout
+      - run:
+          name: Install Nix
+          command: |
+            curl -L https://nixos.org/nix/install | sh
